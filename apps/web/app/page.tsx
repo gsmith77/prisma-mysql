@@ -1,7 +1,8 @@
 import { prisma } from "@repo/database";
+import type { User } from "../../../packages/database/src/client";
 
 export default async function IndexPage() {
-  const users = await prisma.user.findMany();
+  const users: User = await prisma.user.findMany();
 
   return (
     <div>
